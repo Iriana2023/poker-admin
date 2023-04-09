@@ -21,6 +21,7 @@ function Form({handleAddCave, handleCloseAdd}) {
         <motion.div
             initial={{opacity:0}}
             animate={{opacity:1}}
+            transition={{delay:.5}} 
             exit={{opacity:0}}
         >
             <form className="py-5" onSubmit={(e) => handleAddCave(e)}>

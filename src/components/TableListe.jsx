@@ -28,6 +28,7 @@ function TableListe({items, handleRemove, handleAdd, handleRetrait, handleCredit
                             <motion.tr key={item.id} className={`${!item.inGames && 'table-danger'}`}
                                 initial={{opacity:0}}
                                 animate={{opacity:1}}
+                                transition={{delay:.7}}
                                 exit={{opacity:0}}
                             >
                                 <td>{item.cave}</td>

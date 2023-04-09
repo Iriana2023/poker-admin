@@ -20,12 +20,10 @@ function App() {
    const [add, setAdd] = useState(false)
    const [addAmount, setAddAmount] = useState(false)
    const [currentPlayers, setCurrentPlayers] = useState('')
-   const [addCaveValue, setAddCaveValue] = useState(0)
    const [inRemoved, setInRemoved] = useState(false)
    const [withdrawed, setWithdrawed] = useState(false)
    const [credited, setCredited] = useState(false)
  
-
    const removePlayers = (id) => {
 
     setInRemoved(true)
@@ -102,7 +100,6 @@ function App() {
    const addInGames = (e) => {
     e.preventDefault()
     //console.log(currentPlayers)
-    setAddCaveValue(e.target.caveAjout.value)
     const currentModify = [...players]
     let toModify = currentModify.find(el=>el.id === currentPlayers.id)
     toModify.cave = parseInt(e.target.caveAjout.value) + parseInt(toModify.cave)

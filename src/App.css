@@ -115,7 +115,7 @@
 
 .overlay{
   z-index: 90;
-  position: fixed;
+  position: fixed; 
   width: 100%;
   left: 0;
   top: 0;

@@ -4,40 +4,40 @@ function Sidebar() {
           <div className="sidebar-sticky">
             <ul className="nav flex-column">
               <li className="nav-item">
-                <a className="nav-link " href="">
+                <div className="nav-link " >
                   <span ></span>
                   Dashboard <span className="sr-only">(current)</span>
-                </a>
+                </div>
               </li>
               <li className="nav-item" >
-                <a className="nav-link" href="">
+                <div className="nav-link" >
                   <span ></span>
                   Orders
-                </a>
+                </div>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="">
+                <div className="nav-link" >
                   <span ></span>
                   Products
-                </a>
+                </div>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="">
+                <div className="nav-link" >
                   <span ></span>
                   Customers
-                </a>
+                </div>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="">
+                <div className="nav-link" >
                   <span ></span>
                   Reports
-                </a>
+                </div>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <div className="nav-link" >
                   <span ></span>
                   Integrations
-                </a>
+                </div>
               </li>
             </ul>
 

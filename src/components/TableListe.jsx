@@ -1,4 +1,5 @@
 import {FaTimes, FaPlus, FaMinus, FaPiggyBank} from 'react-icons/fa'
+import {motion, AnimatePresence} from 'framer-motion'
 
 
 function TableListe({items, handleRemove, handleAdd, handleRetrait, handleCredit}) {
@@ -23,19 +24,25 @@ function TableListe({items, handleRemove, handleAdd, handleRetrait, handleCredit
             <tbody>
                 {
                     items.map((item)=>(
-                        <tr key={item.id} className={`${!item.inGames && 'table-danger'}`}>
-                            <td>{item.cave}</td>
-                            <td>{item.name}</td>
-                            <td>{item.retrait}</td>
-                            <td className={`${parseInt(item.credit) > 0 ? 'text-danger' : 'text-success'}`}>{item.credit}</td>
-                            <td>{item.inGames ? 'En Jeux' : 'Hors Jeux'}</td>
-                            <td>
-                                <button className='btn btn-danger' disabled={!item.inGames} onClick={() => handleRemove(item.id)}>{ <FaTimes /> }</button> 
-                                <button className='btn btn-success' disabled={!item.inGames} onClick={() => handleAdd(item.id)}>{ <FaPlus /> }</button> 
-                                <button className='btn btn-warning' disabled={!item.inGames} onClick={() => handleRetrait(item.id)}>{ <FaMinus /> }</button> 
-                                <button className='btn btn-secondary' disabled={!item.inGames} onClick={() => handleCredit(item.id)}>{ <FaPiggyBank /> }</button> 
-                            </td>
-                        </tr>
+                        <AnimatePresence>
+                            <motion.tr key={item.id} className={`${!item.inGames && 'table-danger'}`}
+                                initial={{opacity:0}}
+                                animate={{opacity:1}}
+                                exit={{opacity:0}}
+                            >
+                                <td>{item.cave}</td>
+                                <td>{item.name}</td>
+                                <td>{item.retrait}</td>
+                                <td className={`${parseInt(item.credit) > 0 ? 'text-danger' : 'text-success'}`}>{item.credit}</td>
+                                <td>{item.inGames ? 'En Jeux' : 'Hors Jeux'}</td>
+                                <td>
+                                    <button className='btn btn-danger' disabled={!item.inGames} onClick={() => handleRemove(item.id)}>{ <FaTimes /> }</button> 
+                                    <button className='btn btn-success' disabled={!item.inGames} onClick={() => handleAdd(item.id)}>{ <FaPlus /> }</button> 
+                                    <button className='btn btn-warning' disabled={!item.inGames} onClick={() => handleRetrait(item.id)}>{ <FaMinus /> }</button> 
+                                    <button className='btn btn-secondary' disabled={!item.inGames} onClick={() => handleCredit(item.id)}>{ <FaPiggyBank /> }</button> 
+                                </td>
+                            </motion.tr>
+                        </AnimatePresence>
                     ))
                 }           
                 

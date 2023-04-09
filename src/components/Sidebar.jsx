@@ -6,39 +6,16 @@ function Sidebar() {
               <li className="nav-item">
                 <div className="nav-link " >
                   <span ></span>
-                  Dashboard <span className="sr-only">(current)</span>
+                  Salon de jeux <span className="sr-only">(current)</span>
                 </div>
               </li>
               <li className="nav-item" >
                 <div className="nav-link" >
                   <span ></span>
-                  Orders
+                  Table 1
                 </div>
               </li>
-              <li className="nav-item">
-                <div className="nav-link" >
-                  <span ></span>
-                  Products
-                </div>
-              </li>
-              <li className="nav-item">
-                <div className="nav-link" >
-                  <span ></span>
-                  Customers
-                </div>
-              </li>
-              <li className="nav-item">
-                <div className="nav-link" >
-                  <span ></span>
-                  Reports
-                </div>
-              </li>
-              <li className="nav-item">
-                <div className="nav-link" >
-                  <span ></span>
-                  Integrations
-                </div>
-              </li>
+              
             </ul>
 
             

@@ -176,24 +176,23 @@ function App() {
       <div className='container-fluid'>
         <div className='row'>
             <Sidebar />
-            <main role="main" className="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-              <MainHeader items={players} handleAddPlayers={addNew}/>
+              <main role="main" className="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+                <MainHeader items={players} handleAddPlayers={addNew}/>
 
-              {inRemoved && (<ModalForm currentPlayers={currentPlayers} handleCloseModal={closeFormModal} handleDecave={decave}/>)}
+                {inRemoved && (<ModalForm currentPlayers={currentPlayers} handleCloseModal={closeFormModal} handleDecave={decave}/>)}
 
-              {withdrawed && (<FormRetrait handleCloseWithDraw={closeWithdraw} handleWithdraw={withdraw} withdrawFor={currentPlayers.name}/>)}
+                {withdrawed && (<FormRetrait handleCloseWithDraw={closeWithdraw} handleWithdraw={withdraw} withdrawFor={currentPlayers.name}/>)}
 
-              {add && (<Form handleAddCave={addValueCave} handleCloseAdd={closeFormAdd}/>)}
+                {add && (<Form handleAddCave={addValueCave} handleCloseAdd={closeFormAdd}/>)}
 
-              {addAmount && (<><h2>Ajout pour {currentPlayers.name}</h2><FormAdd handleCaveAdd={addInGames} handleClose={closeForm}/></>)}
+                {addAmount && (<><h2>Ajout pour {currentPlayers.name}</h2><FormAdd handleCaveAdd={addInGames} handleClose={closeForm}/></>)}
 
-              {credited && (<FormCredit handleCloseCredit={closeCredit} handleCredit={credit}/>)}
-              
+                {credited && (<FormCredit handleCloseCredit={closeCredit} handleCredit={credit}/>)}
+                
 
-              { players > 0 && (<h2>Liste</h2>) }
-              <TableListe items={players} handleRemove={removePlayers} handleAdd={addCave} handleRetrait={retraitCave} handleCredit={doCredit}/>
-            </main>
-
+                { players > 0 && (<h2>Liste</h2>) }
+                <TableListe items={players} handleRemove={removePlayers} handleAdd={addCave} handleRetrait={retraitCave} handleCredit={doCredit}/>
+              </main>
         </div>
       </div>  
     </>

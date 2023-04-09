@@ -10,7 +10,7 @@ import FormAdd from './components/FormAdd';
 import ModalForm from './components/ModalForm';
 import FormRetrait from './components/FormRetrait';
 import FormCredit from './components/FormCredit';
-
+import { v4 as uuidv4 } from 'uuid';
 
 
 function App() {
@@ -72,11 +72,12 @@ function App() {
     e.preventDefault()    
     
     const elPlayers = {
-      id: players.length + 1,
+      id: uuidv4(),
       name: e.target.nameForm.value,
       cave: parseInt(e.target.valueCave.value),
       retrait: 0,
       credit: 0,
+      remboursement: 0,
       inGames: true
     } 
 
@@ -153,9 +154,15 @@ function App() {
 
     }else if(e.target.creditChoice.value === 'remboursement'){
 
-      cust.credit = parseInt(cust.credit) - parseInt(e.target.cdt.value)
-      cust.remboursement = parseInt(e.target.cdt.value) + parseInt(cust.remboursement)
-      setCredited(false)
+      if(e.target.methoder.value === 'espece'){
+        cust.credit = parseInt(cust.credit) - parseInt(e.target.cdt.value)
+        cust.remboursement = parseInt(e.target.cdt.value) + parseInt(cust.remboursement)
+        setCredited(false)
+      }else if(e.target.methoder.value === 'jeton'){
+        cust.credit = parseInt(cust.credit) - parseInt(e.target.cdt.value)
+        setCredited(false)
+      }
+      
 
     } 
     setPlayers(newStatePlayers)
@@ -183,7 +190,7 @@ function App() {
               {credited && (<FormCredit handleCloseCredit={closeCredit} handleCredit={credit}/>)}
               
 
-              <h2>Liste</h2>
+              { players > 0 && (<h2>Liste</h2>) }
               <TableListe items={players} handleRemove={removePlayers} handleAdd={addCave} handleRetrait={retraitCave} handleCredit={doCredit}/>
             </main>
 
